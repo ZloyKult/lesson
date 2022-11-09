@@ -1,0 +1,94 @@
+-руководство (справочная информация)
+man <utility> # просмотр справочной информации по утилите
+<utility> --help # просмотр справочной информации по утилите
+
+--навигация
+ls  <dir> # просмотр содержимого каталога (в том числе прав доступа)
+cd <dir> # переход в каталог
+pwd <dir> # текущая директория 
+
+--каталоги
+mkdir <dir> # создание каталога
+rmdir <dir> # удаление пустого каталога
+rm -rf <dir> # удаление каталога с файлами
+
+--файлы
+cat <file> # вывод содержимого файла в консоль
+touch <file> # создать пустой файл
+
+--Консоль
+history # история введенных команд
+
+
+
+
+создать директорию с поддиректорией одной командой к примеру /home/dir/subdir
+создать одной командой несколько файлов
+
+пользуясь встроенным справочником, изучить команды:
+cp
+rm
+mv
+mvdir
+
+
+(тут гугл в помощь, если не понятно)
+удалитьт несколько файлов одной командой
+переименовать файл 
+переместить файл в другую директорию
+переместить директорию с содержимым в любой другой каталог(перед этим ее с файлами создать, соответственно)
+
+Ознакомиться и все попробовать в консоли:
+https://losst.pro/goryachie-klavishi-terminala-linux
+
+
+
+https://github.com/Na1ron/lesson.git
+
+
+--пакетный менеджер
+yum search поиск пакетов
+yum install установка
+yum update обновление 
+yum remove удаление
+yum localinstall установка из .pkg файла
+
+--управление сервисом
+systemctl status <servicename> статус сервиса
+systemctl start <servicename> запуск 
+systemctl stop <servicename> остановка
+systemctl reload <servicename> перезагрузка конфигурации без остановки сервиса
+systemctl restart <servicename> перезапуск
+systemctl enable <servicename> включить в автозагрузку
+systemctl disable <servicename> выключить автозагрузку
+whereis <servicename>
+
+Nginx Сначала прочитать то что по ссылке!
+https://baks.dev/article/centos/kak-ustanovit-nginx-na-centos-7
+
+На новой виртуалке:
+включить сетевой интерфейс. Команда nmtui там поставить галку "auto"
+Рестартануть сетевую службу systemctl restart network
+узнать ip address команда ip addr
+Обновить yum
+установить vim, epel-release
+добавить исключение для фаервола (firewalld) порт 80
+Установить nginx, добавить в автозагрузку
+убедиться что сервис работает
+
+Создать в системе две папки
+/var/www/simple
+/var/www/project
+
+дать пользователю nginx права на эти папки
+команда:  chown nginx:nginx /var/www/simple
+          chown nginx:nginx /var/www/project
+
+в каждую положить html с разным содержанием
+Пример: https://imdiz.ru/html-css-js/osnovy-html-css/hello-world-html-i-css/
+
+nginx настроить так, чтобы при запросе из браузера:
+http://ip_виртуалки/simple   должен открыться первй html из папки /var/www/simple
+http://ip_виртуалки/project  должен открыться html из папки /var/www/project
+
+
